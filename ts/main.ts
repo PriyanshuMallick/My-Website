@@ -1,14 +1,10 @@
 import { pages } from "./lists/pages.js";
-import { addStyleFile } from "./utils/csshacks.js";
 
-import "./../css/style.css";
-
-let topnav = document.getElementById("top-navbar");
-// let test = document.getElementById("test");
-// test.innerHTML = "test";
+const topnav = document.getElementById("top-navbar");
 
 if (topnav != null) {
-  let navs = document.createElement("ui");
+  const navItems = document.createElement("ui");
+  navItems.classList.add("top-navbar-ul", "navbar-text");
   pages.forEach((page) => {
     const item = document.createElement("li");
     const url = document.createElement("a");
@@ -18,6 +14,10 @@ if (topnav != null) {
 
     if (page.name != null) {
       url.innerText = page.name.toUpperCase();
+
+      if (page.name == "home") {
+        item.classList.add("active");
+      }
     } else {
       const icon = document.createElement("i");
       page.icon.split(" ").forEach((ico) => icon.classList.add(ico));
@@ -25,9 +25,7 @@ if (topnav != null) {
     }
 
     item.appendChild(url);
-    navs.appendChild(item);
+    navItems.appendChild(item);
   });
-  topnav.appendChild(navs);
+  topnav.appendChild(navItems);
 }
-
-addStyleFile(`css/min/style.min.css`);
