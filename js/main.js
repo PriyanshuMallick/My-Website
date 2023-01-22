@@ -1,27 +1,33 @@
 import { pages } from "./lists/pages.js";
 import { socials } from "./lists/socials.js";
+//? Top Nav
 addNav({
     navbar: document.getElementById("top-navbar"),
     itemlist: pages,
     classNames: ["top-nav"],
     active: "home",
 });
+//? Side Mid Nav: Socials
 addNav({
     navbar: document.getElementById("side-nav social"),
     itemlist: socials,
     classNames: ["socials", "side-nav", "btn-container-solid"],
-    // active: "game",
 });
+//? Side Bottom Nav: Minimized Top Nav
 const bottomMinPagesSection = document.getElementById("side-nav min-pages");
 const minPageNavBtn = document.createElement("i");
 minPageNavBtn.classList.add("fas", "fa-bars", "hanburger", "min-page");
 let div = bottomMinPagesSection.appendChild(document.createElement("nav"));
 bottomMinPagesSection.appendChild(minPageNavBtn);
+//? Adding BG Images
+document
+    .getElementById("bgimg1")
+    .appendChild(document.createElement("img"))
+    .setAttribute("src", "assets/images/_bgimg1.png");
 addNav({
     navbar: div,
     itemlist: pages,
     classNames: ["socials", "side-nav", "btn-container-invisible"],
-    // active: "game",
     showicons: true,
 });
 function addNav({ navbar, itemlist: items, classNames, showicons, active, }) {

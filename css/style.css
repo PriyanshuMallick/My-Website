@@ -100,4 +100,17 @@
   color: var(--social-logo-0);
   text-decoration: none;
   transition-duration: 0.5s;
+}
+
+.btn-container-invisible {
+  border-radius: 25px;
+  padding: 14px 10px;
+}
+
+#bgimg1 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  translate: 0 -80px;
+  z-index: -100;
 }/*# sourceMappingURL=style.css.map */

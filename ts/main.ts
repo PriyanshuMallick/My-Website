@@ -24,6 +24,13 @@ minPageNavBtn.classList.add("fas", "fa-bars", "hanburger", "min-page");
 let div = bottomMinPagesSection.appendChild(document.createElement("nav"));
 bottomMinPagesSection.appendChild(minPageNavBtn);
 
+//? Adding BG Images
+
+document
+  .getElementById("bgimg1")
+  .appendChild(document.createElement("img"))
+  .setAttribute("src", "assets/images/_bgimg1.png");
+
 addNav({
   navbar: div,
   itemlist: pages,
