@@ -2,19 +2,22 @@ import { pages } from "./lists/pages.js";
 import { socials } from "./lists/socials.js";
 import { navlist } from "./utils/mytypes.js";
 
+//? Top Nav
 addNav({
   navbar: document.getElementById("top-navbar"),
   itemlist: pages,
   classNames: ["top-nav"],
   active: "home",
 });
+
+//? Side Mid Nav: Socials
 addNav({
   navbar: document.getElementById("side-nav social"),
   itemlist: socials,
   classNames: ["socials", "side-nav", "btn-container-solid"],
-  // active: "game",
 });
 
+//? Side Bottom Nav: Minimized Top Nav
 const bottomMinPagesSection = document.getElementById("side-nav min-pages");
 const minPageNavBtn = document.createElement("i");
 minPageNavBtn.classList.add("fas", "fa-bars", "hanburger", "min-page");
@@ -25,7 +28,6 @@ addNav({
   navbar: div,
   itemlist: pages,
   classNames: ["socials", "side-nav", "btn-container-invisible"],
-  // active: "game",
   showicons: true,
 });
 
