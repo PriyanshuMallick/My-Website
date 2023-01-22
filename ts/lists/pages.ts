@@ -1,39 +1,46 @@
-import { page } from "../utils/mytypes.js";
+import { navlist } from "../utils/mytypes.js";
 
-export const pages: page[] = [
+export const pages: navlist[] = [
   {
     name: "home",
     url: "#",
-    icon: "fa-solid fa-house",
+    icon: "fas fa-house",
     description: `Navigate to home page`,
+    useicon: false,
+  },
+  {
+    name: "skills",
+    url: "#",
+    icon: "fas fa-user",
+    // icon: "fa-duotone fa-sparkles",
+    // icon: 'fa-solid fa-address-card',
+    description: "Navigate to my skills page",
+    useicon: false,
+  },
+  {
+    name: "game",
+    url: "#",
+    icon: "fas fa-gamepad",
+    // icon: "fa-solid fa-alien-8bit",
+    // icon: 'fa-solid fa-gamepad-modern',
+    description: "Navigate to game page",
+    useicon: true,
   },
   {
     name: "gallery",
     url: "#",
-    icon: "fa-duotone fa-rectangle-vertical-history",
+    // icon: "fas fa-rectangle-vertical-history",
+    icon: "fas fa-house",
     description: "Navigate to gallery page",
+    useicon: false,
   },
-  {
-    // name: "game",
-    name: null,
-    url: "#",
-    icon: "fa-solid fa-gamepad",
-    // icon: 'fa-solid fa-alien-8bit',
-    // icon: 'fa-solid fa-gamepad-modern',
-    description: "Navigate to game page",
-  },
-  {
-    name: "contact",
-    url: "#",
-    icon: "fa-regular fa-address-card",
-    // icon: 'fa-solid fa-address-card',
-    description: "Navigate to contact page",
-  },
+
   {
     name: "about",
     url: "#",
     // icon: 'fa-solid fa-user',
-    icon: "fa-brands fa-atlassian",
+    icon: "fab fa-atlassian",
     description: "Navigate to about page",
+    useicon: false,
   },
 ];

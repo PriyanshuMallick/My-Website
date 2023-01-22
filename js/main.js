@@ -1,27 +1,55 @@
 import { pages } from "./lists/pages.js";
-const topnav = document.getElementById("top-navbar");
-if (topnav != null) {
+import { socials } from "./lists/socials.js";
+addNav({
+    navbar: document.getElementById("top-navbar"),
+    itemlist: pages,
+    classNames: ["top-nav"],
+    active: "home",
+});
+addNav({
+    navbar: document.getElementById("side-nav social"),
+    itemlist: socials,
+    classNames: ["socials", "side-nav", "btn-container-solid"],
+    // active: "game",
+});
+const bottomMinPagesSection = document.getElementById("side-nav min-pages");
+const minPageNavBtn = document.createElement("i");
+minPageNavBtn.classList.add("fas", "fa-bars", "hanburger", "min-page");
+let div = bottomMinPagesSection.appendChild(document.createElement("nav"));
+bottomMinPagesSection.appendChild(minPageNavBtn);
+addNav({
+    navbar: div,
+    itemlist: pages,
+    classNames: ["socials", "side-nav", "btn-container-invisible"],
+    // active: "game",
+    showicons: true,
+});
+function addNav({ navbar, itemlist: items, classNames, showicons, active, }) {
+    if (navbar == null) {
+        throw new Error("Passed Node is Null");
+    }
     const navItems = document.createElement("ui");
-    navItems.classList.add("top-navbar-ul", "navbar-text");
-    pages.forEach((page) => {
-        const item = document.createElement("li");
-        const url = document.createElement("a");
-        url.href = page.url;
-        // url. = page.description;
-        if (page.name != null) {
-            url.innerText = page.name.toUpperCase();
-            if (page.name == "home") {
-                item.classList.add("active");
-            }
+    navItems.classList.add("navbar-ul", "navbar-text");
+    classNames.map((className) => navItems.classList.add(className));
+    items.map((item) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = item.url;
+        if (active != null && item.name.toLowerCase() == active.toLowerCase()) {
+            a.classList.add("active");
+        }
+        if ((showicons == null && item.useicon == false) || showicons == false) {
+            a.innerText = item.name.toUpperCase();
+            a.classList.add(item.name);
         }
         else {
             const icon = document.createElement("i");
-            page.icon.split(" ").forEach((ico) => icon.classList.add(ico));
-            url.appendChild(icon);
+            item.icon.split(" ").map((ico) => icon.classList.add(ico));
+            a.appendChild(icon);
         }
-        item.appendChild(url);
-        navItems.appendChild(item);
+        li.appendChild(a);
+        navItems.appendChild(li);
     });
-    topnav.appendChild(navItems);
+    navbar.appendChild(navItems);
 }
 //# sourceMappingURL=main.js.map
