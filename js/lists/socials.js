@@ -21,7 +21,7 @@ export const socials = [
         useicon: true,
     },
     {
-        name: "linked in",
+        name: "linked-in",
         url: "",
         icon: "fab fa-linkedin-in",
         description: "My linked in Account",
