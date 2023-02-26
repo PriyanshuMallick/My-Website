@@ -1,9 +1,9 @@
-import { navlist } from "../utils/mytypes.js";
+import { navlist } from "../module/mytypes.js";
 
 export const pages: navlist[] = [
   {
     name: "home",
-    url: "#",
+    url: "/index.html",
     icon: "fas fa-house",
     description: `Navigate to home page`,
     useicon: false,

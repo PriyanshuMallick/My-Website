@@ -12,7 +12,8 @@
   --hero-text-0: rgba(187, 156, 96, 1)
   --social-logo-0: rgba(25, 22, 34, 1)
   --social-logo-1: rgba(187, 156, 96, 1)
-  --todo-bg: rgba(51, 51, 51, 1)
+  --scrollbar-color: rgba(187, 157, 96, 0.212)
+  --scrollbar-color-hover: var(--accent-color-1)
 
 //? ---------------------------------------------- colors ----------------------------------------------
 
@@ -64,6 +65,22 @@
 
 //? --------------------------------------- Layout --------------------------------------- 
 
+.body
+  margin: 0
+  background: linear-gradient(160deg, #1F1D29 0%, #16121E 41.15%)
+  // height: 100vh
+
+  &::-webkit-scrollbar
+    background: var(--body-bg-dark-0)
+    width: .3em
+
+  &::-webkit-scrollbar-thumb
+    background-color:  var(--scrollbar-color)
+    border-radius: 25px
+
+    &:hover
+      background: var(--scrollbar-color-hover)
+
 // .main-nav
 //   display: inline-flex
 //   flex-direction: row-reverse
@@ -84,8 +101,21 @@
 
 
 #top-navbar
-  padding-left: 130px
+  margin-left: 130px
+
+  @media (max-width: 460px)
+    & > .navbar-ul 
+      display: none
+
   
+
+  @media (max-width: 580px) 
+    margin: auto
+    display: flex
+    justify-content: center   // Center horizontally
+    align-items: center      // Center vertically
+  
+
 
 
 .top-navbar-bg
@@ -134,7 +164,7 @@
         color: var(--accent-color-2)
 
 .btn-container 
-
+  // width: 20px
   border-radius: 25px
   padding: 14px 10px
   transition: .5s
@@ -188,4 +218,6 @@
   top: 0
   right: 0
   translate: 0 -80px
+
+.bgimg  
   z-index: -100

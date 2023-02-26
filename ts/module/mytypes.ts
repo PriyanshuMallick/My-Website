@@ -5,3 +5,8 @@ export type navlist = {
   useicon: boolean;
   description: string;
 };
+
+export type image = {
+  url: string;
+  alt: string;
+};

@@ -1,4 +1,4 @@
-import { navlist } from "../utils/mytypes";
+import { navlist } from "../module/mytypes";
 
 export const socials: navlist[] = [
   {

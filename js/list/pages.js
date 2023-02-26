@@ -1,7 +1,7 @@
 export const pages = [
     {
         name: "home",
-        url: "#",
+        url: "/index.html",
         icon: "fas fa-house",
         description: `Navigate to home page`,
         useicon: false,

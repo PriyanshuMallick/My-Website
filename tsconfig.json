@@ -7,7 +7,7 @@
     "outDir": "./js",
     "watch": true
   },
-  "exclude": ["assets"]
+  "exclude": ["assets", "ts/module/mytypes.ts"]
   // "watchOptions": {
   //   "excludeDirectories": ["assets"]
   // }
