@@ -4,6 +4,11 @@
     "target": "ES6",
     // "module": "CommonJS",
     "sourceMap": true,
-    "outDir": "./js"
-  }
+    "outDir": "./js",
+    "watch": true
+  },
+  "exclude": ["assets", "ts/module/mytypes.ts"]
+  // "watchOptions": {
+  //   "excludeDirectories": ["assets"]
+  // }
 }
